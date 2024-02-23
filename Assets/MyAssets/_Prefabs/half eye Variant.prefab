@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2306687683529079785
+--- !u!1001 &2804314458409852482
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 824fc04ab5d01f841b8a435a602ac391, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.792
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 824fc04ab5d01f841b8a435a602ac391, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 824fc04ab5d01f841b8a435a602ac391, type: 3}
       propertyPath: m_LocalRotation.w
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4846f5f02141dbb49956e485b35a8f6f, type: 2}
     - target: {fileID: 919132149155446097, guid: 824fc04ab5d01f841b8a435a602ac391, type: 3}
       propertyPath: m_Name
-      value: half eye V3 1
+      value: half eye Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1512909242990660281, guid: 824fc04ab5d01f841b8a435a602ac391, type: 3}
       propertyPath: m_Materials.Array.data[0]

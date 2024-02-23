@@ -14,7 +14,7 @@ public class SpawnOrgan : MonoBehaviour
 {
     public List<ButtonObjectPair> buttonObjectPairs; // Список пар кнопка-объект для спавна
     public Transform spawnPoint; // Точка спавна
-
+    
     private GameObject spawnedObject; // Ссылка на созданный объект
 
     private void Start()
@@ -35,7 +35,7 @@ public class SpawnOrgan : MonoBehaviour
         }
 
         // Создаем новый объект
-        spawnedObject = Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+        spawnedObject = Instantiate(objectToSpawn, spawnPoint.position, objectToSpawn.transform.rotation);
     }
 }
 
