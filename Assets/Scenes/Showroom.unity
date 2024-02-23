@@ -2652,6 +2652,7 @@ GameObject:
   - component: {fileID: 1011455086}
   - component: {fileID: 1011455085}
   - component: {fileID: 1011455089}
+  - component: {fileID: 1011455090}
   m_Layer: 0
   m_Name: Magick Cube
   m_TagString: Untagged
@@ -2730,8 +2731,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011455084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.017, y: 1.44, z: 0.001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.017, y: 1.127, z: -0.15}
+  m_LocalScale: {x: 0.33631814, y: 0.31954044, z: 0.29173633}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2744,7 +2745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011455084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98c1855951a4d8d479f6b6d2e8555e83, type: 3}
   m_Name: 
@@ -2753,7 +2754,7 @@ MonoBehaviour:
   - button: {fileID: 72594901}
     objectToSpawn: {fileID: 6964980469748404654, guid: d9cdffa2e326df841b0c41a4d2796421, type: 3}
   - button: {fileID: 1243184439}
-    objectToSpawn: {fileID: 919132149155446097, guid: 824fc04ab5d01f841b8a435a602ac391, type: 3}
+    objectToSpawn: {fileID: 3038668564481434387, guid: 1b42abd7f9382fd4a8cc01991d430bf8, type: 3}
   - button: {fileID: 585987146}
     objectToSpawn: {fileID: 2612238552241464227, guid: 654fcb64604ef024e88c5ca6b2aa329f, type: 3}
   - button: {fileID: 1247280174}
@@ -2764,6 +2765,48 @@ MonoBehaviour:
     objectToSpawn: {fileID: 1337115296557546446, guid: 3a70d90c3c3c6cc4481c37d62e58f732, type: 3}
   - button: {fileID: 948506948}
     objectToSpawn: {fileID: 8944585438025120401, guid: 8aa0e6749b53e114a954ec6793df391d, type: 3}
+  spawnPoint: {fileID: 1011455088}
+--- !u!114 &1011455090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011455084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea47e24f020dacc49811313c6ff8a420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonObjectPairs:
+  - button: {fileID: 72594901}
+    objectToSpawn: {fileID: 6964980469748404654, guid: d9cdffa2e326df841b0c41a4d2796421, type: 3}
+    spawnOffset: {x: 0, y: -0.85, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+  - button: {fileID: 1243184439}
+    objectToSpawn: {fileID: 3038668564481434387, guid: 1b42abd7f9382fd4a8cc01991d430bf8, type: 3}
+    spawnOffset: {x: 0, y: 0.5, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+  - button: {fileID: 585987146}
+    objectToSpawn: {fileID: 2612238552241464227, guid: 654fcb64604ef024e88c5ca6b2aa329f, type: 3}
+    spawnOffset: {x: 0, y: 1.2, z: 0}
+    spawnRotation: {x: 0, y: 90, z: 0}
+  - button: {fileID: 1247280174}
+    objectToSpawn: {fileID: 3299281303487696333, guid: 4aa81d113ec027940af6b2f873164643, type: 3}
+    spawnOffset: {x: 0, y: 0.3, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
+  - button: {fileID: 1135835453}
+    objectToSpawn: {fileID: 4981045247240819830, guid: f6b2229ec62a4ff4ea1be4e2d33262e2, type: 3}
+    spawnOffset: {x: -1.3, y: -0.5, z: 0.9}
+    spawnRotation: {x: 0, y: 90, z: 0}
+  - button: {fileID: 1170165073}
+    objectToSpawn: {fileID: 1337115296557546446, guid: 3a70d90c3c3c6cc4481c37d62e58f732, type: 3}
+    spawnOffset: {x: 1, y: 1, z: 0}
+    spawnRotation: {x: -90, y: -90, z: 0}
+  - button: {fileID: 948506948}
+    objectToSpawn: {fileID: 8944585438025120401, guid: 8aa0e6749b53e114a954ec6793df391d, type: 3}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnRotation: {x: 0, y: 0, z: 0}
   spawnPoint: {fileID: 1011455088}
 --- !u!1 &1071272062
 GameObject:
