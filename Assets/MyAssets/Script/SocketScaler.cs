@@ -10,6 +10,7 @@ public class SocketScaler : MonoBehaviour
 {
     [SerializeField] private float scaleMultiplier = 2f; 
     [SerializeField] private Transform targetSocket; 
+
     private Vector3 originalScale;
     private bool enteredSocket;
     private bool exitedSocket; 

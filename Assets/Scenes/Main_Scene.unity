@@ -1535,6 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 3
   objectToSpawn: {fileID: 7213325696914637192, guid: 966fbb3628cf46940a91697a612eac91, type: 3}
+  socketInteractor: {fileID: 1770131665}
   spawnPoint: {fileID: 1987822162}
 --- !u!1001 &166126574
 PrefabInstance:
@@ -2176,8 +2177,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202276359}
   m_LocalRotation: {x: 0.0025148785, y: 0.0054339743, z: 0.0004512228, w: 0.999982}
-  m_LocalPosition: {x: -0.4671427, y: 1.7406667, z: -0.23142813}
-  m_LocalScale: {x: 1.4285818, y: 0.026667204, z: 1.4285812}
+  m_LocalPosition: {x: -0.47, y: 1.762, z: -0.449}
+  m_LocalScale: {x: 1.45, y: 0.026667204, z: 1.4285812}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1770131664}
@@ -2527,6 +2528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 3
   objectToSpawn: {fileID: 7213325696914637192, guid: 0e76a9766df0f464db6e4c31eeb83318, type: 3}
+  socketInteractor: {fileID: 1770131665}
   spawnPoint: {fileID: 1987822162}
 --- !u!1 &235308782
 GameObject:
@@ -4115,6 +4117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 3
   objectToSpawn: {fileID: 7213325696914637192, guid: 98499a51441fee449ab18768960488ac, type: 3}
+  socketInteractor: {fileID: 1770131665}
   spawnPoint: {fileID: 1987822162}
 --- !u!1001 &336372206
 PrefabInstance:
@@ -5689,7 +5692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505562319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.89, z: -14.58}
+  m_LocalPosition: {x: 0.079, y: 1.05, z: -14.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6407,6 +6410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 3
   objectToSpawn: {fileID: 7213325696914637192, guid: ce7f6d9554b601e45975abd27bbf7979, type: 3}
+  socketInteractor: {fileID: 1770131665}
   spawnPoint: {fileID: 1987822162}
 --- !u!1001 &603316336
 PrefabInstance:
@@ -9023,7 +9027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304530879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.381, z: 0}
+  m_LocalPosition: {x: 0, y: 0.381, z: 2.513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11045,6 +11049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 3
   objectToSpawn: {fileID: 7213325696914637192, guid: 55b386705f6a50744ae20dab69340767, type: 3}
+  socketInteractor: {fileID: 1770131665}
   spawnPoint: {fileID: 1987822162}
 --- !u!1 &1496201930
 GameObject:
@@ -11369,6 +11374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 3
   objectToSpawn: {fileID: 3940225170285529209, guid: 553b2e514484cfd4382152eb1f71ca60, type: 3}
+  socketInteractor: {fileID: 1770131665}
   spawnPoint: {fileID: 1987822162}
 --- !u!4 &1539369281 stripped
 Transform:
@@ -12309,37 +12315,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0.007960321, y: 0.0026820896, z: 0.0020157401}
---- !u!1 &1720968230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1720968231}
-  m_Layer: 0
-  m_Name: Attach
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1720968231
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720968230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 3.91, z: 0.002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1770131664}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1770131663
 GameObject:
   m_ObjectHideFlags: 0
@@ -12349,8 +12324,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1770131664}
-  - component: {fileID: 1770131666}
   - component: {fileID: 1770131665}
+  - component: {fileID: 1770131666}
   m_Layer: 0
   m_Name: Socket
   m_TagString: Untagged
@@ -12366,11 +12341,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770131663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.001, y: -5.5, z: -0.077}
+  m_LocalPosition: {x: 0.001, y: -2.75, z: 0.017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1720968231}
+  m_Children: []
   m_Father: {fileID: 202276364}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12386,7 +12360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 1487704658}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -12394,7 +12368,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
-  m_DisableVisualsWhenBlockedInGroup: 1
+  m_DisableVisualsWhenBlockedInGroup: 0
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
@@ -12418,108 +12392,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 332115683}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: EnterSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 157707004}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 329485682}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 332115683}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: ExitSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 157707008}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: ExitSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1520461983}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: ExitSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 602445294}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: ExitSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1491121062}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: ExitSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 227200290}
-        m_TargetAssemblyTypeName: BorisOrgans, Assembly-CSharp
-        m_MethodName: ExitSocket
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12548,14 +12426,14 @@ MonoBehaviour:
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 3
-  m_RecycleDelayTime: 15
+  m_RecycleDelayTime: 1
   m_HoverSocketSnapping: 0
-  m_SocketSnappingRadius: 2
+  m_SocketSnappingRadius: 3
   m_SocketScaleMode: 1
   m_FixedScale: {x: 3, y: 3, z: 3}
   m_TargetBoundsSize: {x: 3, y: 3, z: 3}
---- !u!65 &1770131666
-BoxCollider:
+--- !u!136 &1770131666
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12564,9 +12442,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2189715, y: 5.8556128, z: 1.2777085}
-  m_Center: {x: 0, y: 7.0030766, z: 0.00044232348}
+  m_Radius: 1
+  m_Height: 59.68491
+  m_Direction: 1
+  m_Center: {x: -0.00016104481, y: 9.867587, z: 0.0008836558}
 --- !u!1 &1802631926
 GameObject:
   m_ObjectHideFlags: 0
