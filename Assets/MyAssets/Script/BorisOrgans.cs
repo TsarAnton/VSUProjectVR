@@ -7,39 +7,47 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BorisOrgans : MonoBehaviour
 {
-    [SerializeField] private float scaleMultiplier = 3f;
-    [SerializeField] public GameObject objectToSpawn;
+    [SerializeField] private Vector3 fixedScale;
+    [SerializeField] private float hoverScale;
     [SerializeField] private XRSocketInteractor socketInteractor;
+
+    public GameObject objectToSpawn;
     public Transform spawnPoint;
+
     private Vector3 originalScale;
     private GameObject spawnedObject;
+
     void Start()
     {
         originalScale = transform.localScale; 
-        socketInteractor.onSelectEntered.AddListener(OnSelectEnter); 
-        socketInteractor.onSelectExited.AddListener(OnSelectExit); 
+     
+
+        socketInteractor.onSelectEntered.AddListener(OnSelectEnter);
+        socketInteractor.onSelectExited.AddListener(OnSelectExit);
     }
 
     private void OnSelectEnter(XRBaseInteractable interactable)
     {
-   
         if (interactable.gameObject == gameObject)
         {
+            socketInteractor.fixedScale = fixedScale;
+            socketInteractor.interactableHoverScale = hoverScale;
             SpawnObject(objectToSpawn);
-            transform.localScale = originalScale * scaleMultiplier;
             Debug.Log("Entered socket");
         }
     }
 
     private void OnSelectExit(XRBaseInteractable interactable)
     {
-       
         if (interactable.gameObject == gameObject)
         {
             DestroyObject(spawnedObject);
             transform.localScale = originalScale;
             Debug.Log("Exit socket");
         }
+    }
+    private void OnGrabEntered(XRBaseInteractable interactable)
+    {
     }
     void Update()
     {

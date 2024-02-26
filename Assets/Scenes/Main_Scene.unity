@@ -1533,9 +1533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 3
-  objectToSpawn: {fileID: 7213325696914637192, guid: 966fbb3628cf46940a91697a612eac91, type: 3}
+  fixedScale: {x: 0, y: 0, z: 0}
+  hoverScale: 0
   socketInteractor: {fileID: 1770131665}
+  objectToSpawn: {fileID: 7213325696914637192, guid: 966fbb3628cf46940a91697a612eac91, type: 3}
   spawnPoint: {fileID: 1987822162}
 --- !u!1001 &166126574
 PrefabInstance:
@@ -2526,9 +2527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 3
-  objectToSpawn: {fileID: 7213325696914637192, guid: 0e76a9766df0f464db6e4c31eeb83318, type: 3}
+  fixedScale: {x: 3, y: 3, z: 3}
+  hoverScale: 3
   socketInteractor: {fileID: 1770131665}
+  objectToSpawn: {fileID: 7213325696914637192, guid: 0e76a9766df0f464db6e4c31eeb83318, type: 3}
   spawnPoint: {fileID: 1987822162}
 --- !u!1 &235308782
 GameObject:
@@ -4115,9 +4117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 3
-  objectToSpawn: {fileID: 7213325696914637192, guid: 98499a51441fee449ab18768960488ac, type: 3}
+  fixedScale: {x: 3, y: 3, z: 3}
+  hoverScale: 3
   socketInteractor: {fileID: 1770131665}
+  objectToSpawn: {fileID: 7213325696914637192, guid: 98499a51441fee449ab18768960488ac, type: 3}
   spawnPoint: {fileID: 1987822162}
 --- !u!1001 &336372206
 PrefabInstance:
@@ -6408,9 +6411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 3
-  objectToSpawn: {fileID: 7213325696914637192, guid: ce7f6d9554b601e45975abd27bbf7979, type: 3}
+  fixedScale: {x: 3, y: 3, z: 3}
+  hoverScale: 3
   socketInteractor: {fileID: 1770131665}
+  objectToSpawn: {fileID: 7213325696914637192, guid: ce7f6d9554b601e45975abd27bbf7979, type: 3}
   spawnPoint: {fileID: 1987822162}
 --- !u!1001 &603316336
 PrefabInstance:
@@ -11047,9 +11051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 3
-  objectToSpawn: {fileID: 7213325696914637192, guid: 55b386705f6a50744ae20dab69340767, type: 3}
+  fixedScale: {x: 3, y: 3, z: 3}
+  hoverScale: 3
   socketInteractor: {fileID: 1770131665}
+  objectToSpawn: {fileID: 7213325696914637192, guid: 55b386705f6a50744ae20dab69340767, type: 3}
   spawnPoint: {fileID: 1987822162}
 --- !u!1 &1496201930
 GameObject:
@@ -11372,9 +11377,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMultiplier: 3
-  objectToSpawn: {fileID: 3940225170285529209, guid: 553b2e514484cfd4382152eb1f71ca60, type: 3}
+  fixedScale: {x: 3, y: 3, z: 3}
+  hoverScale: 10
   socketInteractor: {fileID: 1770131665}
+  objectToSpawn: {fileID: 3940225170285529209, guid: 553b2e514484cfd4382152eb1f71ca60, type: 3}
   spawnPoint: {fileID: 1987822162}
 --- !u!4 &1539369281 stripped
 Transform:
