@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7213325695388388068}
   - component: {fileID: 7213325695388388069}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 7213325695951442448}
   - component: {fileID: 7213325695951442454}
   - component: {fileID: 7213325695951442455}
+  - component: {fileID: 2814664777507784860}
   m_Layer: 0
   m_Name: Panel (1)
   m_TagString: Untagged
@@ -164,7 +165,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -0.00009783264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7213325696867146537}
   m_Father: {fileID: 7213325697153296514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -211,6 +213,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2814664777507784860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213325695951442449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 3, y: 3, z: 3, w: 3}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &7213325696220150547
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +240,7 @@ GameObject:
   - component: {fileID: 7213325696220150551}
   - component: {fileID: 7213325696220150544}
   - component: {fileID: 7213325696220150545}
+  - component: {fileID: 6889020568291013989}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -245,7 +262,6 @@ RectTransform:
   m_Children:
   - {fileID: 7213325697171966463}
   - {fileID: 7213325695388388070}
-  - {fileID: 7213325696867146537}
   m_Father: {fileID: 7213325696914637199}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -335,6 +351,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &6889020568291013989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213325696220150547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 7213325696867146537}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 7213325695951442448}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7213325696867146538
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,17 +406,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7213325696867146538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000103602615}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7213325696220150546}
-  m_RootOrder: 2
+  m_Father: {fileID: 7213325695951442448}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -5.7}
+  m_AnchoredPosition: {x: 0.00010179298, y: -2.5002787}
   m_SizeDelta: {x: 142.01, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7213325696867146543
@@ -405,7 +451,7 @@ MonoBehaviour:
     \u043E\u0440\u0433\u0430\u043D \u0432\u044B\u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439
     \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430,
     \u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u043D\u044B\u0439
-    \u0432 \u043C\u0430\u043B\u043E\u043C \u0442\u0430\u0437\u0443.\r\n\r\n\u041C\u043E\u0447\u0435\u0432\u043E\u0439
+    \u0432 \u043C\u0430\u043B\u043E\u043C \u0442\u0430\u0437\u0443.\r\n\r\u041C\u043E\u0447\u0435\u0432\u043E\u0439
     \u043F\u0443\u0437\u044B\u0440\u044C \u0432\u044B\u043F\u043E\u043B\u043D\u044F\u0435\u0442
     \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0440\u0435\u0437\u0435\u0440\u0432\u0443\u0430\u0440\u0430
     \u043C\u043E\u0447\u0438, \u0438\u0437 \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E
