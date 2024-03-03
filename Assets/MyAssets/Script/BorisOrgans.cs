@@ -17,13 +17,22 @@ public class BorisOrgans : MonoBehaviour
     private Vector3 originalScale;
     private GameObject spawnedObject;
 
+    private XRGrabInteractable grabInteractable;
     void Start()
     {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        if (grabInteractable != null)
+        {
+            grabInteractable.onSelectEntered.AddListener(OnGrabEnter);
+          //  grabInteractable.onSelectExited.AddListener(OnGrabEnter);
+        }
+
         originalScale = transform.localScale; 
      
 
         socketInteractor.onSelectEntered.AddListener(OnSelectEnter);
         socketInteractor.onSelectExited.AddListener(OnSelectExit);
+
     }
 
     private void OnSelectEnter(XRBaseInteractable interactable)
@@ -31,7 +40,7 @@ public class BorisOrgans : MonoBehaviour
         if (interactable.gameObject == gameObject)
         {
             socketInteractor.fixedScale = fixedScale;
-            socketInteractor.interactableHoverScale = hoverScale;
+            //socketInteractor.interactableHoverScale = hoverScale;
             SpawnObject(objectToSpawn);
             Debug.Log("Entered socket");
         }
@@ -46,25 +55,15 @@ public class BorisOrgans : MonoBehaviour
             Debug.Log("Exit socket");
         }
     }
-    private void OnGrabEntered(XRBaseInteractable interactable)
+    private void OnGrabEnter(XRBaseInteractor interactor)
     {
+        socketInteractor.interactableHoverScale = hoverScale;
     }
     void Update()
     {
         
     }
-    //public void ExitSocket()
-    //{
-    //    DestroyObject(spawnedObject);
-    //    transform.localScale = originalScale;
-    //    Debug.Log("Exit socket");
-    //}
-    //public void EnterSocket()
-    //{
-    //    SpawnObject(objectToSpawn);
-    //    transform.localScale = originalScale * scaleMultiplier;
-    //    Debug.Log("Entered socket");
-    //}
+   
     private void SpawnObject(GameObject objectToSpawn)
     {
         spawnedObject = Instantiate(objectToSpawn, spawnPoint.position, objectToSpawn.transform.rotation);

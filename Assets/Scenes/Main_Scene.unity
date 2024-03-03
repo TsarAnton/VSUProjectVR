@@ -1533,8 +1533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7d0b9e4cea4d64190636f661257a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedScale: {x: 0, y: 0, z: 0}
-  hoverScale: 0
+  fixedScale: {x: 3, y: 3, z: 3}
+  hoverScale: 3
   socketInteractor: {fileID: 1770131665}
   objectToSpawn: {fileID: 7213325696914637192, guid: 966fbb3628cf46940a91697a612eac91, type: 3}
   spawnPoint: {fileID: 1987822162}
@@ -11378,7 +11378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedScale: {x: 3, y: 3, z: 3}
-  hoverScale: 10
+  hoverScale: 3
   socketInteractor: {fileID: 1770131665}
   objectToSpawn: {fileID: 3940225170285529209, guid: 553b2e514484cfd4382152eb1f71ca60, type: 3}
   spawnPoint: {fileID: 1987822162}
@@ -12431,7 +12431,7 @@ MonoBehaviour:
   m_InteractableHoverMeshMaterial: {fileID: 0}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
-  m_InteractableHoverScale: 3
+  m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
   m_HoverSocketSnapping: 0
   m_SocketSnappingRadius: 3
