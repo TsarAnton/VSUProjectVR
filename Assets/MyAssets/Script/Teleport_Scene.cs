@@ -27,4 +27,9 @@ public class Teleport_Scene : MonoBehaviour
     SceneManager.LoadScene("Main_Scene");
     }
 
+    public void TPCinema() 
+    {
+    SceneManager.LoadScene("Cinema_Scene");
+    }
+
 }
