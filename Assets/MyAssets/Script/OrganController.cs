@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 [System.Serializable]
-public class ButtonObjectPairWithOffset
+public class ButtonObjectPair
 {
     public Button button; 
     public GameObject objectToSpawn; 
     public Vector3 spawnOffset;
     public Vector3 spawnRotation;
 }
-public class SpawnOrganWithOffset : MonoBehaviour
+public class OrganController : MonoBehaviour
 
 {
-    public List<ButtonObjectPairWithOffset> buttonObjectPairs; // List of pairs button/organ to spawn
+    public List<ButtonObjectPair> buttonObjectPairs; // List of pairs button&organ to spawn
     public Transform spawnPoint; 
     
     private GameObject spawnedObject;// link to created object
@@ -38,6 +38,11 @@ public class SpawnOrganWithOffset : MonoBehaviour
 
         // create new object
         spawnedObject = Instantiate(objectToSpawn, spawnPoint.position + spawnOffset, Quaternion.Euler(spawnRotation));
+    }
+    public void RotateObject(float value)
+    {
+        Vector3 currentRotation = spawnedObject.transform.rotation.eulerAngles;
+        spawnedObject.transform.rotation = Quaternion.Euler(currentRotation.x, value * 360, currentRotation.z);
     }
 }
 
