@@ -4,8 +4,8 @@ using UnityEngine.UI;
 using UnityEngine;
 public class QuizManager : MonoBehaviour
 {
-    public Text questionText;
-    public Text scoreText;
+    public TMPro.TextMeshProUGUI questionText;
+    public TMPro.TextMeshProUGUI scoreText;
     public Button[] answerButtons;
     public QuizData quizData; // Ссылка на ваш объект QuizData
 
@@ -26,6 +26,7 @@ public class QuizManager : MonoBehaviour
 
     void SetNextQuestion()
     {
+        Debug.Log(currentQuestionIndex);
         if (currentQuestionIndex < questions.Count)
         {
             QuestionData question = questions[currentQuestionIndex];
@@ -33,7 +34,7 @@ public class QuizManager : MonoBehaviour
 
             for (int i = 0; i < answerButtons.Length; i++)
             {
-                answerButtons[i].GetComponentInChildren<Text>().text = question.answers[i];
+                answerButtons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = question.answers[i];
             }
         }
         else
@@ -45,11 +46,16 @@ public class QuizManager : MonoBehaviour
 
     public void AnswerButtonClick(int answerIndex)
     {
+        Debug.Log("Anser Click");
+        Debug.Log("answerIndex");
         QuestionData question = questions[currentQuestionIndex];
+        Debug.Log(question.correctAnswerIndex);
         if (question.correctAnswerIndex == answerIndex)
         {
+            Debug.Log("scored");
             // Правильный ответ
             score++;
+            UpdateScoreText();
         }
 
         currentQuestionIndex++;
