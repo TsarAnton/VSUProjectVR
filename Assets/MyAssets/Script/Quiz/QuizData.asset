@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: QuizData
   m_EditorClassIdentifier: 
   questions:
-  - question: 1
+  - question: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac ante
+      ut lectus blandit laoreet vel vitae dolor. Phasellus vehicula fermentum imperdiet.
     answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - 1Lorem ipsum dolor.
+    - 2Lorem ipsum dolor.
+    - 3Lorem ipsum dolor.
+    - 4Lorem ipsum dolor.
     correctAnswerIndex: 4
   - question: 2
     answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - 1Lorem ipsum dolor.
+    - 2Lorem ipsum dolor.
+    - 3Lorem ipsum dolor.
+    - 4Lorem ipsum dolor.
     correctAnswerIndex: 2

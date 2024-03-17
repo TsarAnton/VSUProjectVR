@@ -7,7 +7,7 @@ public class QuizManager : MonoBehaviour
     public TMPro.TextMeshProUGUI questionText;
     public TMPro.TextMeshProUGUI scoreText;
     public Button[] answerButtons;
-    public QuizData quizData; // —сылка на ваш объект QuizData
+    public QuizData quizData; 
 
     private List<QuestionData> questions;
     private int currentQuestionIndex;
