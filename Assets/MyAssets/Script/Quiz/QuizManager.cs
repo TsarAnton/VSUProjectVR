@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine;
+
 public class QuizManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI questionText;
@@ -12,13 +12,22 @@ public class QuizManager : MonoBehaviour
     private List<QuestionData> questions;
     private int currentQuestionIndex;
     private int score;
+    public GameObject EndScreen;
+    public GameObject QuizScreen;
+    // public VisibilityController visibilityController;
 
-    void Start()
+    //void Start()
+    //{
+    //    LoadQuestions(); // Загрузка вопросов из QuizData
+    //    SetNextQuestion(); // Показ первого вопроса
+    //}
+    public void StartQuiz()
     {
-        LoadQuestions(); // Загрузка вопросов из QuizData
-        SetNextQuestion(); // Показ первого вопроса
+        currentQuestionIndex = 0;
+        score = 0;
+        LoadQuestions();
+        SetNextQuestion();
     }
-
     void LoadQuestions()
     {
         questions = new List<QuestionData>(quizData.questions);
@@ -40,7 +49,10 @@ public class QuizManager : MonoBehaviour
         else
         {
             // Викторина завершена
-            questionText.text = "Викторина завершена!";
+            UpdateScoreText();
+            EndScreen.SetActive(true);
+            QuizScreen.SetActive(false);
+
         }
     }
 
@@ -55,7 +67,6 @@ public class QuizManager : MonoBehaviour
             Debug.Log("scored");
             // Правильный ответ
             score++;
-            UpdateScoreText();
         }
 
         currentQuestionIndex++;
@@ -64,6 +75,6 @@ public class QuizManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        scoreText.text = "Счет: " + score;
+        scoreText.text = score+"из "+ questions.Count;
     }
 }
