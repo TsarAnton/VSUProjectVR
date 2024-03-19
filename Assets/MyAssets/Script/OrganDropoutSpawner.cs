@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 [System.Serializable]
 public class OrganToSpawn
 {
@@ -34,7 +36,10 @@ public class OrganDropoutSpawner : MonoBehaviour
     }
     public void RotateObject(float value)
     {
-        Vector3 currentRotation = spawnedObject.transform.rotation.eulerAngles;
-        spawnedObject.transform.rotation = Quaternion.Euler(currentRotation.x, value * 360, currentRotation.z);
+        if (spawnedObject != null)
+        {
+            Vector3 currentRotation = spawnedObject.transform.rotation.eulerAngles;
+            spawnedObject.transform.rotation = Quaternion.Euler(currentRotation.x, value * 360, currentRotation.z);
+        }
     }
 }
