@@ -46,7 +46,8 @@ public class OneObjectPlacement : MonoBehaviour
 	                			target1.transform.rotation = socketInteractors[i].transform.rotation; // Устанавливаем поворот объекта в соответствии с поворотом сокета
 
                 				target1.transform.SetParent(socketInteractors[i].transform); // Устанавливаем родителя объекта в сокет XR Socket
-            				}
+            					break;
+					}
 				}
         		}
 		}
