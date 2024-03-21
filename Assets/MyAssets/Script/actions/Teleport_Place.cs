@@ -16,7 +16,7 @@ public class Teleport_Place : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
     }
 
     public void MoveCamera()
