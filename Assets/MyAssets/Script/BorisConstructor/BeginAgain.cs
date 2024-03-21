@@ -24,6 +24,7 @@ public class BeginAgain : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.001f);
         for(int i = 0; i < objectLists.mainSockets.Count; i++) {
             objectLists.mainSockets[i].socketActive = true;
+            objectLists.teleportSockets[i].socketActive = true;
         }
         platformSocket.socketActive = true;
     }
@@ -54,12 +55,15 @@ public class BeginAgain : MonoBehaviour
             colorLists.redOrgans[i].SetActive(false);
             colorLists.greenOrgans[i].SetActive(false);
             mainSockets[i].socketActive = false;
+            teleportSockets[i].socketActive = false;
 
-            if(!(teleportSockets[i].selectTarget is XRBaseInteractable)) {
-                target.transform.position = teleportSockets[i].transform.position;
-                target.transform.rotation = teleportSockets[i].transform.rotation;
-                target.transform.SetParent(teleportSockets[i].transform);
+            if(teleportSockets[i].selectTarget is XRBaseInteractable) {
+                target.transform.SetParent(null);
             }
+
+            target.transform.position = teleportSockets[i].transform.position;
+            target.transform.rotation = teleportSockets[i].transform.rotation;
+            target.transform.SetParent(teleportSockets[i].transform);
         }
         textMeshPro.text = "0 из " + objectLists.mainSockets.Count.ToString("D1");
         StartCoroutine(DelayedExecution());
