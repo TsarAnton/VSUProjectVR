@@ -7,27 +7,30 @@ public class QuizManager : MonoBehaviour
     public TMPro.TextMeshProUGUI questionText;
     public TMPro.TextMeshProUGUI scoreText;
     public Button[] answerButtons;
-    public QuizData quizData; 
-
+    public QuizData quizData;
     private List<QuestionData> questions;
     private int currentQuestionIndex;
     private int score;
     public GameObject EndScreen;
     public GameObject QuizScreen;
-    // public VisibilityController visibilityController;
+    public TMPro.TextMeshProUGUI timerText;
+    public float maxTime = 5f; // Set the initial time limit per question
+    private float timeRemaining;
+    private float initialWidth;
+    public RectTransform panelTransform;
+   
 
-    //void Start()
-    //{
-    //    LoadQuestions(); // Загрузка вопросов из QuizData
-    //    SetNextQuestion(); // Показ первого вопроса
-    //}
     public void StartQuiz()
     {
+        timeRemaining = maxTime;
         currentQuestionIndex = 0;
         score = 0;
+        initialWidth = panelTransform.rect.width;
         LoadQuestions();
         SetNextQuestion();
+        InvokeRepeating("UpdateTimer", 1f, 1f); // Start the timer
     }
+
     void LoadQuestions()
     {
         questions = new List<QuestionData>(quizData.questions);
@@ -35,7 +38,6 @@ public class QuizManager : MonoBehaviour
 
     void SetNextQuestion()
     {
-        Debug.Log(currentQuestionIndex);
         if (currentQuestionIndex < questions.Count)
         {
             QuestionData question = questions[currentQuestionIndex];
@@ -45,36 +47,131 @@ public class QuizManager : MonoBehaviour
             {
                 answerButtons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = question.answers[i];
             }
+
+            
+            timeRemaining = maxTime; // Reset the timer for the next question
+            panelTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, initialWidth);
         }
         else
         {
-            // Викторина завершена
-            UpdateScoreText();
-            EndScreen.SetActive(true);
-            QuizScreen.SetActive(false);
-
+            EndQuiz();
         }
     }
 
     public void AnswerButtonClick(int answerIndex)
     {
-        Debug.Log("Anser Click");
-        Debug.Log("answerIndex");
-        QuestionData question = questions[currentQuestionIndex];
-        Debug.Log(question.correctAnswerIndex);
-        if (question.correctAnswerIndex == answerIndex)
-        {
-            Debug.Log("scored");
-            // Правильный ответ
-            score++;
-        }
 
-        currentQuestionIndex++;
-        SetNextQuestion();
+            QuestionData question = questions[currentQuestionIndex];
+            if (question.correctAnswerIndex == answerIndex)
+            {
+                score++;
+            }
+            currentQuestionIndex++;
+  
+            SetNextQuestion();
+    }
+
+    void Update()
+    {
+        timerText.text = Mathf.Round(timeRemaining).ToString();
     }
 
     void UpdateScoreText()
     {
-        scoreText.text = score+"из "+ questions.Count;
+        scoreText.text = score + " из " + questions.Count;
+    }
+
+    void EndQuiz()
+    {
+        UpdateScoreText();
+        panelTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, initialWidth);
+        EndScreen.SetActive(true);
+        QuizScreen.SetActive(false);
+        CancelInvoke("UpdateTimer"); // Stop the timer when the quiz ends
+    }
+
+    void UpdateTimer()
+    {
+        timeRemaining -= 1f;
+        timerText.text = Mathf.Round(timeRemaining).ToString();
+
+        float fillAmount = timeRemaining / maxTime; // Вычисляем заполнение шкалы относительно текущего и максимального времени
+        Debug.Log(fillAmount);
+        panelTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, initialWidth * fillAmount); // Устанавливаем новую ширину панели
+        if (timeRemaining <= 0f)
+        {
+            currentQuestionIndex++;
+            SetNextQuestion(); // Time's up, treat it as an unanswered question
+        }
     }
 }
+//public class QuizManager : MonoBehaviour
+//{
+//public TMPro.TextMeshProUGUI questionText;
+//public TMPro.TextMeshProUGUI scoreText;
+//public Button[] answerButtons;
+//public QuizData quizData; 
+
+//private List<QuestionData> questions;
+//private int currentQuestionIndex;
+//private int score;
+//public GameObject EndScreen;
+//public GameObject QuizScreen;
+
+//public void StartQuiz()
+//{
+//    currentQuestionIndex = 0;
+//    score = 0;
+//    LoadQuestions();
+//    SetNextQuestion();
+//}
+//void LoadQuestions()
+//{
+//    questions = new List<QuestionData>(quizData.questions);
+//}
+
+//void SetNextQuestion()
+//{
+//    Debug.Log(currentQuestionIndex);
+//    if (currentQuestionIndex < questions.Count)
+//    {
+//        QuestionData question = questions[currentQuestionIndex];
+//        questionText.text = question.question;
+
+//        for (int i = 0; i < answerButtons.Length; i++)
+//        {
+//            answerButtons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = question.answers[i];
+//        }
+//    }
+//    else
+//    {
+//        // Викторина завершена
+//        UpdateScoreText();
+//        EndScreen.SetActive(true);
+//        QuizScreen.SetActive(false);
+
+//    }
+//}
+
+//public void AnswerButtonClick(int answerIndex)
+//{
+//    Debug.Log("Anser Click");
+//    Debug.Log("answerIndex");
+//    QuestionData question = questions[currentQuestionIndex];
+//    Debug.Log(question.correctAnswerIndex);
+//    if (question.correctAnswerIndex == answerIndex)
+//    {
+//        Debug.Log("scored");
+//        // Правильный ответ
+//        score++;
+//    }
+
+//    currentQuestionIndex++;
+//    SetNextQuestion();
+//}
+
+//void UpdateScoreText()
+//{
+//    scoreText.text = score+"из "+ questions.Count;
+//}
+//}
