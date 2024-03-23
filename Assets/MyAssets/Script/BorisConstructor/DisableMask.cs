@@ -34,7 +34,7 @@ public class DisableMask : MonoBehaviour
         List<XRGrabInteractable> organs = objectLists.organs;
         XRGrabInteractable grabInteractable = args.interactable.GetComponent<XRGrabInteractable>();
         for(int i = 0; i < organs.Count; i++) {
-            if (organs[i] != null && organs[i].name.Equals(grabInteractable.name))
+            if (organs[i] != null && organs[i] == grabInteractable)
             {
                 grabInteractable.interactionLayers = objectLists.layerMasks[i]; // Включить маску слоев для XR Grab Interactable
             }
@@ -46,8 +46,8 @@ public class DisableMask : MonoBehaviour
         XRGrabInteractable grabInteractable = args.interactable.GetComponent<XRGrabInteractable>();
         XRBaseInteractor controller = args.interactor.GetComponent<XRBaseInteractor>();
         if(controller == leftController || controller == rightController) {
-        for(int i = 0; i < objectLists.organs.Count; i++) {
-            if (grabInteractable.name == objectLists.organs[i].name)
+            for(int i = 0; i < objectLists.organs.Count; i++) {
+                if (grabInteractable == objectLists.organs[i])
                 {
                     if (colorLists.redOrgans[i].activeSelf) {
                         colorLists.redOrgans[i].SetActive(false);

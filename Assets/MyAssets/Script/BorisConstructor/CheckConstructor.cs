@@ -10,6 +10,8 @@ public class CheckConstructor : MonoBehaviour
     public ObjectLists objectLists;
     public ColorLists colorLists;
     public TextMeshProUGUI textMeshPro;
+    public XRGrabInteractable leftEye;
+    public XRGrabInteractable rightEye;
 
     private void Start()
     {
@@ -29,13 +31,16 @@ public class CheckConstructor : MonoBehaviour
                 XRBaseInteractable targetNeeded = objectLists.organs[i] as XRBaseInteractable;  // Получаем ссылку на XRBaseInteractable
                 XRBaseInteractable targetCurrent = (XRBaseInteractable)mainSockets[i].selectTarget; // Получаем ссылку на XRBaseInteractable
 
-                if(targetNeeded.name.Equals(targetCurrent.name)) {
+                if(targetNeeded == targetCurrent || (targetNeeded == leftEye && targetCurrent == rightEye) || (targetNeeded == rightEye && targetCurrent == leftEye)) {
                     colorLists.greenOrgans[i].SetActive(true);
+                    colorLists.greenOrgans[i].transform.position = targetNeeded.transform.position; 
+                    colorLists.greenOrgans[i].transform.rotation = targetNeeded.transform.rotation;
+                    //Debug.Log("set green for " + targetCurrent.name);
                     result++;
                 } else {
                     List<GameObject> redOrgans = colorLists.redOrgans;
                     for(int j = 0; j < redOrgans.Count; j++) {
-                        if(targetCurrent.name.Equals(objectLists.organs[j].name)) {
+                        if(targetCurrent == objectLists.organs[j]) {
                             redOrgans[j].transform.position = targetCurrent.transform.position; 
                             redOrgans[j].transform.rotation = targetCurrent.transform.rotation;
                             redOrgans[j].SetActive(true);
