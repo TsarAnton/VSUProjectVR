@@ -11,6 +11,8 @@ public class BeginAgain : MonoBehaviour
     public ObjectLists objectLists;
     public ColorLists colorLists;
     public TextMeshProUGUI textMeshPro;
+    // public XRController leftController;
+    // public XRController rightController;
 
     private void Start()
     {
@@ -24,9 +26,18 @@ public class BeginAgain : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.001f);
         for(int i = 0; i < objectLists.mainSockets.Count; i++) {
             objectLists.mainSockets[i].socketActive = true;
-            objectLists.teleportSockets[i].socketActive = true;
         }
         platformSocket.socketActive = true;
+        // leftController.socketActive = true;
+        // rightController.socketActive = true;
+    }
+
+    private System.Collections.IEnumerator DelayedExecutionTeleport()
+    {
+        yield return new WaitForSecondsRealtime(0.001f);
+        for(int i = 0; i < objectLists.mainSockets.Count; i++) {
+            objectLists.teleportSockets[i].socketActive = true;
+        }
     }
 
     public void TeleportObject()
@@ -40,30 +51,56 @@ public class BeginAgain : MonoBehaviour
             target.transform.SetParent(null);
 	    }
 
+        // if(leftController != null && leftController.selectTarget is XRBaseInteractable) {
+        //     XRBaseInteractable target = (XRBaseInteractable)leftController.selectTarget; // Получаем ссылку на XRBaseInteractable
+
+	    //     // Удаляем объект из сокета
+        //     leftController.socketActive = false;
+        //     target.transform.SetParent(null);
+        // }
+
+        // if(rightController != null && rightController.selectTarget is XRBaseInteractable) {
+        //     XRBaseInteractable target = (XRBaseInteractable)rightController.selectTarget; // Получаем ссылку на XRBaseInteractable
+
+	    //     // Удаляем объект из сокета
+        //     rightController.socketActive = false;
+        //     target.transform.SetParent(null);
+        // }
+
         List<XRSocketInteractor> mainSockets = objectLists.mainSockets;
         List<XRSocketInteractor> teleportSockets = objectLists.teleportSockets;
-        for(int i = 0; i < mainSockets.Count; i++) 
-        {
-            XRBaseInteractable target = objectLists.organs[i] as XRBaseInteractable;  // Получаем ссылку на XRBaseInteractable
+
+        for(int i = 0; i < mainSockets.Count; i++) {
             if (mainSockets[i] != null && mainSockets[i].selectTarget is XRBaseInteractable) // Проверяем, выбран ли объект в сокете
             {
+                XRBaseInteractable target = (XRBaseInteractable)mainSockets[i].selectTarget;
 	            // Удаляем объект из сокета
-                target.transform.SetParent(null);
-                target.transform.position = mainSockets[i].transform.position;
-                target.transform.rotation = mainSockets[i].transform.rotation;
+                mainSockets[i].socketActive = false;
+                //target.transform.SetParent(null);
 	        }
+        }
+
+        for(int i = 0; i < teleportSockets.Count; i++) {
+            if (teleportSockets[i] != null && teleportSockets[i].selectTarget is XRBaseInteractable) // Проверяем, выбран ли объект в сокете
+            {
+                XRBaseInteractable target = (XRBaseInteractable)teleportSockets[i].selectTarget;
+	            // Удаляем объект из сокета
+                teleportSockets[i].socketActive = false;
+                //target.transform.SetParent(null);
+	        }
+        }
+        
+        for(int i = 0; i < teleportSockets.Count; i++) 
+        {
+            XRBaseInteractable target = objectLists.organs[i] as XRBaseInteractable;  // Получаем ссылку на XRBaseInteractable
             colorLists.redOrgans[i].SetActive(false);
             colorLists.greenOrgans[i].SetActive(false);
-            mainSockets[i].socketActive = false;
-            teleportSockets[i].socketActive = false;
 
-            if(teleportSockets[i].selectTarget is XRBaseInteractable) {
-                target.transform.SetParent(null);
+            if(target != null) {
+                target.transform.position = teleportSockets[i].transform.position;
+                target.transform.rotation = teleportSockets[i].transform.rotation;
+                //target.transform.SetParent(teleportSockets[i].transform);
             }
-
-            target.transform.position = teleportSockets[i].transform.position;
-            target.transform.rotation = teleportSockets[i].transform.rotation;
-            target.transform.SetParent(teleportSockets[i].transform);
         }
         textMeshPro.text = "0 из " + objectLists.mainSockets.Count.ToString("D1");
         StartCoroutine(DelayedExecution());

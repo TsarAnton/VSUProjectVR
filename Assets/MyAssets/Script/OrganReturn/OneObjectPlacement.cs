@@ -7,8 +7,7 @@ public class OneObjectPlacement : MonoBehaviour
 {
     public Button placementButton; // Ссылка на кнопку UI Button
 	public XRSocketInteractor platformSocket;
-    public List<XRSocketInteractor> socketInteractors; // Ссылка на XRSocketInteractor
-    public List<XRGrabInteractable> grabInteractables; // Ссылка на XRGrabInteractable
+    public ObjectLists objectLists;
 
     private void Start()
     {
@@ -30,23 +29,23 @@ public class OneObjectPlacement : MonoBehaviour
 
 	        // Удаляем объект из сокета
             platformSocket.socketActive = false;
-            target.transform.SetParent(null);
+            //target.transform.SetParent(null);
             target.transform.position = platformSocket.transform.position;
             target.transform.rotation = platformSocket.transform.rotation;
             deleted = true;
 	    }
 
-		for(int i = 0; i < socketInteractors.Count; i++) {
-        	if (socketInteractors[i] != null && grabInteractables[i] != null)
+		for(int i = 0; i < objectLists.mainSockets.Count; i++) {
+        	if (objectLists.mainSockets[i] != null && objectLists.mainSockets[i] != null)
         	{
-	            XRBaseInteractable target1 = grabInteractables[i] as XRBaseInteractable; // Приводим XRGrabInteractable к типу XRBaseInteractable
+	            XRBaseInteractable target1 = objectLists.organs[i] as XRBaseInteractable; // Приводим XRGrabInteractable к типу XRBaseInteractable
 
 	            if (target1 != null)
         	    {
-        		    target1.transform.position = socketInteractors[i].transform.position; // Устанавливаем позицию объекта на позицию сокета
-	                target1.transform.rotation = socketInteractors[i].transform.rotation; // Устанавливаем поворот объекта в соответствии с поворотом сокета
+        		    target1.transform.position = objectLists.mainSockets[i].transform.position; // Устанавливаем позицию объекта на позицию сокета
+	                target1.transform.rotation = objectLists.mainSockets[i].transform.rotation; // Устанавливаем поворот объекта в соответствии с поворотом сокета
 
-                	target1.transform.SetParent(socketInteractors[i].transform); // Устанавливаем родителя объекта в сокет XR Socket
+                	//target1.transform.SetParent(objectLists.mainSockets[i].transform); // Устанавливаем родителя объекта в сокет XR Socket
 				}
         	}
         }

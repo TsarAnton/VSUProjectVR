@@ -88,6 +88,9 @@ public class LatinTextController : MonoBehaviour
     {
         if(isVisible) {
             isVisible = false;
+            for(int i = 0; i < menus.Count; i++) {
+                menus[i].SetActive(false);
+            }
             textMeshPro.text = "Включить";
         } else {
             isVisible = true;

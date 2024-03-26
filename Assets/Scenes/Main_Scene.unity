@@ -13446,24 +13446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementButton: {fileID: 662030501}
   platformSocket: {fileID: 1770131665}
-  socketInteractors:
-  - {fileID: 2053705967}
-  - {fileID: 2008287768}
-  - {fileID: 483089975}
-  - {fileID: 1426970780}
-  - {fileID: 1418907742}
-  - {fileID: 347020898}
-  - {fileID: 125373424}
-  - {fileID: 89933302}
-  grabInteractables:
-  - {fileID: 602445289}
-  - {fileID: 1520461977}
-  - {fileID: 1715229750}
-  - {fileID: 731253597}
-  - {fileID: 157707005}
-  - {fileID: 1491121059}
-  - {fileID: 332115678}
-  - {fileID: 882745944}
+  objectLists: {fileID: 0}
 --- !u!1 &664732660
 GameObject:
   m_ObjectHideFlags: 0

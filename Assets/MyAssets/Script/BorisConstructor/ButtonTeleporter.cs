@@ -34,7 +34,7 @@ public class ButtonTeleporter : MonoBehaviour
 
 	        // Удаляем объект из сокета
             platformSocket.socketActive = false;
-            target.transform.SetParent(null);
+            //target.transform.SetParent(null);
 	    }
 
         List<XRSocketInteractor> mainSockets = objectLists.mainSockets;
@@ -45,16 +45,16 @@ public class ButtonTeleporter : MonoBehaviour
             if (mainSockets[i] != null && mainSockets[i].selectTarget is XRBaseInteractable) // Проверяем, выбран ли объект в сокете
             {
 	            // Удаляем объект из сокета
-                target.transform.SetParent(null);
-                target.transform.position = mainSockets[i].transform.position;
-                target.transform.rotation = mainSockets[i].transform.rotation;
+                mainSockets[i].socketActive = false;
+                //target.transform.SetParent(null);
 	        }
-            mainSockets[i].socketActive = false;
-            mainSockets[i].interactionLayers = everythingMask;
+            //mainSockets[i].interactionLayers = everythingMask;
 
-            target.transform.position = teleportSockets[i].transform.position;
-            target.transform.rotation = teleportSockets[i].transform.rotation;
-            target.transform.SetParent(teleportSockets[i].transform);
+            //if(target.transform.parent != null) {
+                target.transform.position = teleportSockets[i].transform.position;
+                target.transform.rotation = teleportSockets[i].transform.rotation;
+                //target.transform.SetParent(teleportSockets[i].transform);
+            //}
         }
         StartCoroutine(DelayedExecution());
     }
