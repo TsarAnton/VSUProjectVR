@@ -26,6 +26,7 @@ public class BeginAgain : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.001f);
         for(int i = 0; i < objectLists.mainSockets.Count; i++) {
             objectLists.mainSockets[i].socketActive = true;
+            objectLists.teleportSockets[i].socketActive = true;
         }
         platformSocket.socketActive = true;
         // leftController.socketActive = true;
