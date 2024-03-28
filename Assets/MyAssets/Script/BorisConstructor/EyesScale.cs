@@ -8,10 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class EyesScale : MonoBehaviour
 {
     public ObjectLists objectLists;
-    public GameObject leftEye;
-    public GameObject rightEye;
-    private Vector3 originalScale;
-    public float scaleMultiplier = 3f;
+    private List<Vector3> originalScale;
+    public List<float> scaleMultiplier;
 
     private void Start()
     {
@@ -19,16 +17,21 @@ public class EyesScale : MonoBehaviour
             objectLists.teleportSockets[i].selectEntered.AddListener(OnSelectEnter);
             objectLists.teleportSockets[i].selectExited.AddListener(OnSelectExit);
         }
-        originalScale = leftEye.transform.localScale; 
+        originalScale = new List<Vector3>();
+        for(int i = 0; i < objectLists.organs.Count; i++) {
+            originalScale.Add(objectLists.organs[i].transform.localScale);
+        }
     }
 
     private void OnSelectEnter(SelectEnterEventArgs args)
     {
         XRGrabInteractable interactable = args.interactable.GetComponent<XRGrabInteractable>();
         XRSocketInteractor socketInteractor = args.interactor.GetComponent<XRSocketInteractor>();
-        if (interactable.gameObject == leftEye || interactable.gameObject == rightEye)
-        {
-            socketInteractor.fixedScale =  new Vector3(1, 1, 1) * scaleMultiplier;
+        for(int i = 0; i < objectLists.organs.Count; i++) {
+            if(interactable.gameObject == objectLists.organs[i].gameObject) {
+                socketInteractor.fixedScale =  new Vector3(1, 1, 1) * scaleMultiplier[i];
+                break;
+            }
         }
     }
 
@@ -36,10 +39,12 @@ public class EyesScale : MonoBehaviour
     {
         XRGrabInteractable interactable = args.interactable.GetComponent<XRGrabInteractable>();
         XRSocketInteractor socketInteractor = args.interactor.GetComponent<XRSocketInteractor>();
-        if (interactable.gameObject == leftEye || interactable.gameObject == rightEye)
-        {
-            interactable.transform.localScale = originalScale;
-            socketInteractor.fixedScale =  new Vector3(1, 1, 1);
+        for(int i = 0; i < objectLists.organs.Count; i++) {
+            if(interactable.gameObject == objectLists.organs[i].gameObject) {
+                interactable.transform.localScale = originalScale[i];
+                socketInteractor.fixedScale =  new Vector3(1, 1, 1);
+                break;
+            }
         }
     }
 }
