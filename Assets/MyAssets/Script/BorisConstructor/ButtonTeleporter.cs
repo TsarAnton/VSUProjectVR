@@ -48,7 +48,7 @@ public class ButtonTeleporter : MonoBehaviour
                 mainSockets[i].socketActive = false;
                 //target.transform.SetParent(null);
 	        }
-            //mainSockets[i].interactionLayers = everythingMask;
+            mainSockets[i].interactionLayers = everythingMask;
 
             //if(target.transform.parent != null) {
                 target.transform.position = teleportSockets[i].transform.position;
