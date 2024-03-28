@@ -19,17 +19,17 @@ public class Teleport_Scene : MonoBehaviour
 
     public void TPShowRoom() 
     {
-    SceneManager.LoadScene("Showroom");
+        SceneManager.LoadScene("Showroom");
     }
 
     public void TPMain() 
     {
-    SceneManager.LoadScene("Main_Scene");
+        SceneManager.LoadScene("Main_Scene");
     }
 
     public void TPCinema() 
     {
-    SceneManager.LoadScene("Cinema_Scene");
+        SceneManager.LoadScene("Cinema_Scene");
     }
 
 }
