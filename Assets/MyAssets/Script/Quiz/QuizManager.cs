@@ -14,11 +14,12 @@ public class QuizManager : MonoBehaviour
     public GameObject EndScreen;
     public GameObject QuizScreen;
     public TMPro.TextMeshProUGUI timerText;
-    public float maxTime = 5f; // Set the initial time limit per question
+    public float maxTime = 15f; // Set the initial time limit per question
     private float timeRemaining;
     private float initialWidth;
     public RectTransform panelTransform;
-   
+    private AudioClip timerSound; // Assign the sound clip in the Inspector
+    public AudioSource audioSource;
 
     public void StartQuiz()
     {
@@ -29,6 +30,7 @@ public class QuizManager : MonoBehaviour
         LoadQuestions();
         SetNextQuestion();
         InvokeRepeating("UpdateTimer", 1f, 1f); // Start the timer
+        audioSource = GetComponent<AudioSource>();
     }
 
     void LoadQuestions()
@@ -100,6 +102,10 @@ public class QuizManager : MonoBehaviour
         panelTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, initialWidth * fillAmount); // Устанавливаем новую ширину панели
         if (timeRemaining <= 0f)
         {
+            if (timerSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(timerSound); // Play the timer sound if assigned
+            }
             currentQuestionIndex++;
             SetNextQuestion(); // Time's up, treat it as an unanswered question
         }

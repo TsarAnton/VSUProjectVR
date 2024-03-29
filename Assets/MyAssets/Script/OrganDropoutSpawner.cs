@@ -15,7 +15,8 @@ public class OrganDropoutSpawner : MonoBehaviour
     public Transform spawnPoint;
     private GameObject spawnedObject;
     public List<OrganToSpawn> organsToSpawn;
- 
+    public Slider rotateSlider;
+
     public void SpawnSelectedObject(int selectedIndex)
     {
         SpawnObject(selectedIndex, organsToSpawn[selectedIndex].spawnOffset, organsToSpawn[selectedIndex].spawnRotation);
@@ -28,6 +29,7 @@ public class OrganDropoutSpawner : MonoBehaviour
         }
         Debug.Log(organsToSpawn.Count);
         // Проверяем, что выбран корректный индекс
+        rotateSlider.value = 0;
         if (selectedIndex >= 0 && selectedIndex < organsToSpawn.Count)
         {
             // Спавним выбранный объект

@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12291412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.12, z: 8.21}
+  m_LocalPosition: {x: 0, y: 1.38, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1074,7 +1074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191397551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.079, y: 1.091, z: -14.29}
+  m_LocalPosition: {x: 0.079, y: 0.027, z: -6.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1356,8 +1356,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4025,6 +4025,7 @@ MonoBehaviour:
   - objectToSpawn: {fileID: 8944585438025120401, guid: 8aa0e6749b53e114a954ec6793df391d, type: 3}
     spawnOffset: {x: 0, y: 0.8, z: 0}
     spawnRotation: {x: -90, y: 0, z: 0}
+  rotateSlider: {fileID: 2112895446}
 --- !u!1 &1071272062
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,10 +4246,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.85
+  m_fontSize: 17
   m_fontSizeBase: 17
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6224,7 +6225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041C\u043E\u0437\u0433"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430f7169965b6e94f97c1332994b4f5f, type: 2}
   m_sharedMaterial: {fileID: -4210395033183903413, guid: 430f7169965b6e94f97c1332994b4f5f, type: 2}
@@ -6251,10 +6252,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 17
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6581,7 +6582,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655295921}
   m_LocalRotation: {x: 0.010933413, y: -0.0025365087, z: 0.00007396511, w: 0.999937}
-  m_LocalPosition: {x: 0, y: 0, z: -1.8}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.7383607, y: 3.870678, z: 1.1361588}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6591,7 +6592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.253, y: -0.291, z: 0.005}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.1, y: -116}
+  m_AnchoredPosition: {x: 8.1, y: -162}
   m_SizeDelta: {x: 150, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655295923
@@ -6827,6 +6828,7 @@ GameObject:
   - component: {fileID: 1716889163}
   - component: {fileID: 1716889162}
   - component: {fileID: 1716889161}
+  - component: {fileID: 1716889164}
   m_Layer: 0
   m_Name: Dropdown
   m_TagString: Untagged
@@ -6842,7 +6844,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716889159}
   m_LocalRotation: {x: 0.0026372075, y: 0.0017886432, z: 0.0005094453, w: 0.9999948}
-  m_LocalPosition: {x: 0, y: 0, z: 0.09998269}
+  m_LocalPosition: {x: 0, y: 0, z: 1.3}
   m_LocalScale: {x: 1.35094, y: 3.9256244, z: 1.233097}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6854,7 +6856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.302, y: 0.205, z: 0.059}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.4, y: 8.199897}
+  m_AnchoredPosition: {x: 6.4, y: -22}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716889161
@@ -6904,7 +6906,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 211901272}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: -1
   m_Options:
     m_Options:
     - m_Text: "\u041C\u043E\u0437\u0433"
@@ -6975,6 +6977,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716889159}
   m_CullTransparentMesh: 1
+--- !u!114 &1716889164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716889159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae59182256abc41817116cf739d1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 1716889161}
+  labelText: {fileID: 1500886458}
 --- !u!1 &1753569679
 GameObject:
   m_ObjectHideFlags: 0
