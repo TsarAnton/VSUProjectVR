@@ -34,7 +34,6 @@ public class ButtonTeleporter : MonoBehaviour
 
 	        // Удаляем объект из сокета
             platformSocket.socketActive = false;
-            //target.transform.SetParent(null);
 	    }
 
         List<XRSocketInteractor> mainSockets = objectLists.mainSockets;
@@ -46,16 +45,18 @@ public class ButtonTeleporter : MonoBehaviour
             {
 	            // Удаляем объект из сокета
                 mainSockets[i].socketActive = false;
-                //target.transform.SetParent(null);
 	        }
             mainSockets[i].interactionLayers = everythingMask;
 
-            //if(target.transform.parent != null) {
-                target.transform.position = teleportSockets[i].transform.position;
-                target.transform.rotation = teleportSockets[i].transform.rotation;
-                //target.transform.SetParent(teleportSockets[i].transform);
-            //}
+            target.transform.position = teleportSockets[i].transform.position;
+            target.transform.rotation = teleportSockets[i].transform.rotation;
+
         }
         StartCoroutine(DelayedExecution());
     }
 }
+
+//  ___
+// [o_0]
+// /|_|\
+//  | |
